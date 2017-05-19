@@ -5,14 +5,9 @@ var path = require('path');
 fis.log.level = fis.log.L_ERROR;
 fis.require.prefixes.unshift('axletree');
 fis.cli.name = 'axletree';
-fis.cli.info = fis.util.readJSON(__dirname + '/package.json');
+fis.cli.info = require('./package.json');
 
-fis.cli.help.commands = ['init', 'install', 'release', 'run'];
-
-//每个项目有独立的release目录
-fis.project.init = function(name){
-    fis.project.setTempRoot(path.join(fis.project.getTempPath(),name||fis.project.getProjectPath().split('/').pop()));
-}
+fis.set('modules.commands', ['init', 'install', 'release']);
 
 fis.set('project.ignore', ['output/**', 'node_modules/**', '.git/**', '.svn/**']);
 
@@ -21,8 +16,6 @@ fis.set('project.serverDir', 'server');
 
 //设置不清理目录
 fis.set('server.clean.exclude', ['node_modules/**']);
-
-fis.hook('commonjs',{});
 
 fis.match('/{index,server,app}.js',{
     useMap:false,
@@ -114,3 +107,46 @@ fis.media('debug').match('*.{js,css,png}', {
     useSprite: false,
     optimizer: null
 })
+
+// 模块化支持
+fis.hook('commonjs', {
+    extList: ['.js', '.es', '.ts', '.tsx', '.jsx']
+});
+
+// map.json
+fis.match('::package', {
+    postpackager: function createMap(ret, conf, settings, opt) {
+        var maps = {};
+        fis.util.map(ret.src, function(subpath, file) {
+            maps[file.id] = file;
+        });
+        var pkgMaps = {};
+        fis.util.map(ret.pkg, function(subpath, file) {
+            pkgMaps[file.getUrl()] = file;
+        });
+        var path = require('path');
+        var root = fis.project.getProjectPath();
+        var map = fis.file.wrap(path.join(root, fis.get('namespace') + '-map.json'));
+        var resKeys = Object.keys(ret.map.res);
+        var pkgKeys = Object.keys(ret.map.pkg);
+        for (var i = 0; i < resKeys.length; i++) {
+            var resId = resKeys[i];
+            if (maps[resId]) {
+                ret.map.res[resId].subpath = maps[resId].getHashRelease();
+            } else {
+                fis.log.warning(resId + ' is missing');
+            }
+        }
+        for (var j = 0; j < pkgKeys.length; j++) {
+            var pkg = ret.map.pkg[pkgKeys[j]];
+            if (pkgMaps[pkg.uri]) {
+                pkg.subpath = pkgMaps[pkg.uri].getHashRelease();
+            } else {
+                fis.log.warning(pkg.uri + ' is missing');
+            }
+        }
+        map.setContent(JSON.stringify(ret.map, null, 4));
+        ret.pkg[map.subpath] = map;
+    }
+});
+
