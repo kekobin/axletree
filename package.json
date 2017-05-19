@@ -1,0 +1,55 @@
+{
+  "name": "axletree",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "axletree": "bin/axletree.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "kekobin"
+  },
+  "dependencies": {
+    "minimist": "1.1.1",
+    "liftoff": "2.0.2",
+    "fis3":"3.3.6",
+    "fis3-postpackager-loader": "1.3.12",
+    "weg-command-server": "latest",
+    "weg-hook-commonjs": "latest",
+    "weg-preprocessor-extlang": "latest",
+    "fis-parser-less": "^0.1.3",
+    "fis-parser-babel-5.x": "latest"
+  },
+  "devDependencies": {
+  },
+  "_id": "axletree@1.0.0",
+  "_from": "axletree@*",
+  "_npmVersion": "2.14.7",
+  "_nodeVersion": "4.2.3",
+  "_npmUser": {
+    "name": "kekobin",
+    "email": "kekobin@163.com"
+  },
+  "dist": {
+    "shasum": "",
+    "tarball": ""
+  },
+  "maintainers": [
+    {
+      "name": "kekobin",
+      "email": "kekobin@163.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "",
+    "tmp": ""
+  },
+  "directories": {},
+  "_resolved": "",
+  "readme": "#axletree\n\n\n Test",
+  "readmeFilename": "README.md",
+  "gitHead": ""
+}
