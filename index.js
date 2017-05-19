@@ -5,7 +5,9 @@ var path = require('path');
 fis.log.level = fis.log.L_ERROR;
 fis.require.prefixes.unshift('axletree');
 fis.cli.name = 'axletree';
-fis.cli.info = require('./package.json');
+fis.cli.info = fis.util.readJSON(__dirname + '/package.json');
+
+fis.cli.help.commands = ['init', 'install', 'release', 'run'];
 
 //每个项目有独立的release目录
 fis.project.init = function(name){
@@ -34,16 +36,12 @@ fis.match('/server/**.**',{
     useCompile: false
 });
 
-
-
-
 fis.match('/client/views/(**).tpl', {
     useMap:true,
     url: '/$1',
     //preprocessor: fis.plugin('require')
     preprocessor: fis.plugin('extlang')
 });
-
 
 fis.match('/client/**.{js,css,png,jpg,gif}', {
     useHash:true
