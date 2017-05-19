@@ -108,6 +108,9 @@ fis.media('debug').match('*.{js,css,png}', {
     optimizer: null
 })
 
+// 添加自定义命令
+fis.require._cache['command-create'] = require('axletree-command-create');
+
 // 模块化支持
 fis.hook('commonjs', {
     extList: ['.js', '.es', '.ts', '.tsx', '.jsx']
