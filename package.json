@@ -21,7 +21,10 @@
     "weg-hook-commonjs": "latest",
     "weg-preprocessor-extlang": "latest",
     "fis-parser-less": "^0.1.3",
-    "fis-parser-babel-5.x": "latest"
+    "fis-parser-babel-5.x": "latest",
+    "fis3-preprocessor-js-require-css": "0.1.1",
+    "fis3-preprocessor-js-require-file": "0.1.3",
+    "axletree-command-init": "latest"
   },
   "devDependencies": {
   },
