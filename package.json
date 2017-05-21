@@ -1,7 +1,7 @@
 {
   "name": "axletree",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Front End Integrated Solution for node express.",
   "main": "index.js",
   "bin": {
     "axletree": "bin/axletree"
@@ -9,51 +9,26 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": {
-    "name": "kekobin"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kekobin/axletree.git"
   },
+  "keywords": [
+    "fis",
+    "node"
+  ],
+  "author": "kekobin",
+  "license": "ISC",
+  "homepage": "https://github.com/kekobin/axletree",
   "dependencies": {
-    "minimist": "1.1.1",
-    "liftoff": "2.0.2",
-    "fis3":"3.3.6",
-    "fis3-postpackager-loader": "1.3.12",
-    "weg-command-server": "latest",
-    "weg-hook-commonjs": "latest",
-    "weg-preprocessor-extlang": "latest",
-    "fis-parser-less": "^0.1.3",
-    "fis-parser-babel-5.x": "latest",
+    "fis3": "3.4.32",
+    "fis3-hook-commonjs": "0.1.26",
+    "fis3-hook-node_modules": "2.2.8",
+    "fis3-parser-typescript": "1.1.0",
     "fis3-preprocessor-js-require-css": "0.1.1",
     "fis3-preprocessor-js-require-file": "0.1.3",
-    "axletree-command-create": "latest",
-    "minimist": "1.2.0"
-  },
-  "devDependencies": {
-  },
-  "_id": "axletree@1.0.0",
-  "_from": "axletree@*",
-  "_npmVersion": "2.14.7",
-  "_nodeVersion": "4.2.3",
-  "_npmUser": {
-    "name": "kekobin",
-    "email": "kekobin@163.com"
-  },
-  "dist": {
-    "shasum": "",
-    "tarball": ""
-  },
-  "maintainers": [
-    {
-      "name": "kekobin",
-      "email": "kekobin@163.com"
-    }
-  ],
-  "_npmOperationalInternal": {
-    "host": "",
-    "tmp": ""
-  },
-  "directories": {},
-  "_resolved": "",
-  "readme": "#axletree\n\n\n Test",
-  "readmeFilename": "README.md",
-  "gitHead": ""
+    "liftoff": "2.3.0",
+    "minimist": "1.2.0",
+    "axletree-command-init": "0.1.1"
+  }
 }

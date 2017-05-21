@@ -1,115 +1,222 @@
+'use strict';
 
-var fis = module.exports =  require('fis3');
-var path = require('path');
-
-fis.log.level = fis.log.L_ERROR;
+var fis = module.exports = require('fis3');
 fis.require.prefixes.unshift('axletree');
-fis.cli.name = 'axletree';
+fis.cli.name = 'axletree';//也即使用axletree封装fis3
 fis.cli.info = require('./package.json');
 
 fis.set('modules.commands', ['init', 'install', 'release']);
 
-fis.set('project.ignore', ['output/**', 'node_modules/**', '.git/**', '.svn/**']);
+fis.set('template', '/views');
+fis.set('app', '/app');
+fis.set('static', '/static');
+fis.set('config', '/conf');
+fis.set('component.dir', '/client/components');
+fis.set('project.fileType.text', 'es,ts,tsx,jsx');
+fis.set('project.ignore', [
+    'issue.info',
+    'README.md',
+    'BCLOUD',
+    'GIT_COMMIT',
+    'fis.yml',
+    'cooder',
+    'build.sh',
+    'component.json',
+    'output/**',
+    '/client/node_modules/**',
+    'fis-conf.js'
+]);
 
-//设置server根目录用于监控server修改,重新启动服务,默认为server
-fis.set('project.serverDir', 'server');
+var clientRoadmap = {
+    // all release to $static dir
+    '/client/(**)': {
+        id: '$1',
+        moduleId: '${namespace}:$1',
+        release: '/${static}/${namespace}/$1'
+    },
+    '/client/**.less': {
+        parser: fis.plugin('less'),
+        rExt: '.css'
+    },
+    '/client/{**.ts,**.tsx,**.jsx,**.es}': {
+        parser: fis.plugin('typescript', {
+            module: 1,
+            target: 0,
+            sourceMap: true
+        }),
+        rExt: 'js'
+    },
+    '/client/**.tpl': {
+        preprocessor: fis.plugin('extlang'),
+        postprocessor: fis.plugin('require-async'),
+        useMap: true
+    },
+    '/client/**.{tpl,js,ts,jsx,es,tsx}': {
+        useSameNameRequire: true
+    },
+    '/client/page/**.tpl': {
+        extras: {
+            isPage: true
+        }
+    },
+    '/client/(page/**.tpl)': {
+        url: '${namespace}/$1',
+        release: '/${template}/${namespace}/$1',
+        useMap: true
+    },
+    '/client/(widget/**.tpl)': {
+        url: '${namespace}/$1',
+        release: '/${template}/${namespace}/$1',
+        useMap: true
+    },
+    '/client/{components,widget}/**.{js,es,ts,tsx,jsx,css,less}': {
+        isMod: true
+    },
+    '/client/test/(**)': {
+        useMap: false,
+        release: '/test/${namespace}/$1'
+    },
+    '${namespace}-map.json': {
+        release: '${config}/fis/${namespace}-map.json'
+    },
+    '::package': {}
+};
 
-//设置不清理目录
-fis.set('server.clean.exclude', ['node_modules/**']);
+var commonRoadmap = {
+    '**.sh': {
+        release: false
+    },
+    '**': {
+        release: '${static}/${namespace}/$0'
+    }
+};
 
-fis.match('/{index,server,app}.js',{
-    useMap:false,
-    useHash: false,
-    useCompile: false
-});
+var serverRoadmap = {
+    '/server/(**)': {
+        useMap: false,
+        preprocessor: false,
+        standard: false,
+        postprocessor: false,
+        optimizer: false,
+        useHash: false,
+        useDomain: false,
+        isMod: false,
+        release: '${app}/${namespace}/$1'
+    },
+    '/server/{**.ts,**.es}': {
+        parser: fis.plugin('typescript', {
+            module: 1,
+            target: 2,
+            sourceMap: true
+        }),
+        rExt: 'js'
+    },
+    '/{node_modules/**,package.json}': {
+        useCompile: false,
+        release: 'app/${namespace}/$0'
+    }
+};
 
-fis.match('/server/**.**',{
-    useMap:false,
-    useHash: false,
-    useCompile: false
-});
-
-fis.match('/client/views/(**).tpl', {
-    useMap:true,
-    url: '/$1',
-    //preprocessor: fis.plugin('require')
-    preprocessor: fis.plugin('extlang')
-});
-
-fis.match('/client/**.{js,css,png,jpg,gif}', {
-    useHash:true
-});
-
-fis.match('/client/**.js', {
-    isMod:true
-});
-
-
-fis.match('/client/**.{js,css}', {
-    useMap:true
-});
-
-// 同名组件依赖
-fis.match('/client/views/**.{tpl,js,css}', {
-    useSameNameRequire: true
-});
-
-
-fis.match('/client/views/(**).{gif,png,js,css}', {
-    url:'/public/$1',
-    release: '/client/public/$1'
-});
-
-// 公共静态资源
-fis.match('/{client/public, client/views}/(**).js', {
-    url:'/public/$1',
-    // fis-optimizer-uglify-js 插件进行压缩，已内置
-    optimizer: fis.plugin('uglify-js')
-});
-
-fis.match('/{client/public, client/views}/(**).css', {
-    url:'/public/$1',
-    // fis-optimizer-clean-css 插件进行压缩，已内置
-    optimizer: fis.plugin('clean-css')
-});
-
-fis.match('/{client/public, client/views}/(**).png', {
-    url:'/public/$1',
-    // fis-optimizer-png-compressor 插件进行压缩，已内置
-    optimizer: fis.plugin('png-compressor')
-});
-
-
-fis.match('/client/public/framework/(**).js', {
-    url:'/public/framework/$1',
-    isMod: false,
-    wrap: false
-});
-
-fis.match('::package', {
-    postpackager: fis.plugin('loader')
-});
-
-// 对 CSS 进行图片合并
-//fis.match('*.css', {
-//    // 给匹配到的文件分配属性 `useSprite`
-//    useSprite: true
-//});
-
-// 启用 fis-spriter-csssprites 插件
-//fis.match('::package', {
-//    spriter: fis.plugin('csssprites')
-//})
-
-
-fis.media('debug').match('*.{js,css,png}', {
-    useHash: false,
-    useSprite: false,
-    optimizer: null
-})
+var prodRoadmap = {
+    '/client/**.{js,css,less,ts,jsx,es,tsx}': {
+        useHash: true
+    },
+    '/client/**.{js,ts,jsx,es,tsx}': {
+        optimizer: fis.plugin('uglify-js')
+    },
+    '/client/**.{css,less}': {
+        optimizer: fis.plugin('clean-css')
+    },
+    '::image': {
+        useHash: true
+    },
+    '/client/**.png': {
+        optimizer: fis.plugin('png-compressor')
+    }
+};
 
 // 添加自定义命令
-fis.require._cache['command-create'] = require('axletree-command-create');
+// fis.require._cache['command-run'] = require('./command/run.js');
+
+[commonRoadmap, clientRoadmap, serverRoadmap, prodRoadmap].forEach(function(roadmap) {
+    fis.util.map(roadmap, function(selector, rules) {
+        fis.match(selector, rules);
+    });
+});
+
+// 发布模式关闭sourceMap
+fis.media('prod').match('/client/{**.ts,**.tsx,**.jsx,**.es}', {
+    parser: fis.plugin('typescript', {
+        module: 1,
+        target: 0
+    }),
+    rExt: 'js'
+}).match('/server/{**.ts,**.es}',{
+    parser: fis.plugin('typescript', {
+        module: 1,
+        target: 2
+    }),
+    rExt: 'js'
+});
+
+fis.enableES7 = function (options) {
+    [fis.media('dev'), fis.media('debug'), fis.media('debug-prod')].forEach(function (media) {
+        media.match('/server/**.js', {
+            parser: fis.plugin('typescript', {
+                module: 1,
+                target: 2,
+                sourceMap: true
+            })
+        });
+    });
+    fis.match('/server/**.js', {
+        parser: fis.plugin('typescript', {
+            module: 1,
+            target: 2
+        })
+    });
+};
+
+fis.enableNPM = function (options) {
+    fis.match('/client/node_modules/**.js', {
+        isMod: true
+    });
+    if (options.autoPack) {
+        fis.match('/client/node_modules/**.js', {
+            packTo: options.npmBundlePath || '/client/pkg/npm/bundle.js'
+        });
+        fis.match('/client/node_modules/**.css', {
+            packTo: options.npmCssBundlePath || '/client/pkg/npm/bundle.css'
+        });
+        fis.on('deploy:start', function(groups) {
+            groups.forEach(function(group) {
+                var modified = group.modified;
+                var total = group.modified;
+                var file;
+                var i = modified.length - 1;
+                while ((file = modified[i--])) {
+                    if ((file.rExt === '.js' || file.rExt === '.css') && file.subpath.indexOf('/client/node_modules') === 0) {
+                        modified.splice(i + 1, 1);
+                    }
+                }
+                i = total.length - 1;
+                while ((file = total[i--])) {
+                    if ((file.rExt === '.js' || file.rExt === '.css') && file.subpath.indexOf('/client/node_modules') === 0) {
+                        total.splice(i + 1, 1);
+                    }
+                }
+            });
+        });
+    }
+    fis.match('/client/**.{js,es,jsx,ts,tsx}', {
+        preprocessor: [
+            fis.plugin('js-require-file'),
+            fis.plugin('js-require-css')
+        ]
+    });
+    fis.unhook('components');
+    fis.hook('node_modules');
+};
 
 // 模块化支持
 fis.hook('commonjs', {
@@ -152,4 +259,3 @@ fis.match('::package', {
         ret.pkg[map.subpath] = map;
     }
 });
-
