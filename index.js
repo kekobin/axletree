@@ -8,18 +8,12 @@ fis.cli.info = require('./package.json');
 fis.set('modules.commands', ['init', 'install', 'release']);
 
 fis.set('template', '/views');
-fis.set('app', '/app');
 fis.set('static', '/static');
-fis.set('config', '/conf');
-fis.set('component.dir', '/client/components');
+fis.set('config', '/config');
 fis.set('project.fileType.text', 'es,ts,tsx,jsx');
 fis.set('project.ignore', [
-    'issue.info',
+    'favicon.ico',
     'README.md',
-    'BCLOUD',
-    'GIT_COMMIT',
-    'fis.yml',
-    'cooder',
     'build.sh',
     'component.json',
     'output/**',
@@ -29,16 +23,16 @@ fis.set('project.ignore', [
 
 var clientRoadmap = {
     // all release to $static dir
-    '/client/(**)': {
+    '/(**)': {
         id: '$1',
         moduleId: '${namespace}:$1',
-        release: '/${static}/${namespace}/$1'
+        release: '/${static}/$1'
     },
-    '/client/**.less': {
-        parser: fis.plugin('less'),
+    '/**.sass': {
+        parser: fis.plugin('sass'),
         rExt: '.css'
     },
-    '/client/{**.ts,**.tsx,**.jsx,**.es}': {
+    '/{**.ts,**.tsx,**.jsx,**.es}': {
         parser: fis.plugin('typescript', {
             module: 1,
             target: 0,
@@ -46,35 +40,31 @@ var clientRoadmap = {
         }),
         rExt: 'js'
     },
-    '/client/**.tpl': {
+    '/**.tpl': {
         preprocessor: fis.plugin('extlang'),
         postprocessor: fis.plugin('require-async'),
         useMap: true
     },
-    '/client/**.{tpl,js,ts,jsx,es,tsx}': {
+    '/**.{tpl,js,ts,jsx,es,tsx}': {
         useSameNameRequire: true
     },
-    '/client/page/**.tpl': {
+    '/page/**.html': {
         extras: {
             isPage: true
         }
     },
-    '/client/(page/**.tpl)': {
-        url: '${namespace}/$1',
-        release: '/${template}/${namespace}/$1',
+    '/(page/**.html)': {
+        url: '$1',
+        release: '/${template}//$1',
         useMap: true
     },
-    '/client/(widget/**.tpl)': {
-        url: '${namespace}/$1',
-        release: '/${template}/${namespace}/$1',
+    '/(widget/**.html)': {
+        url: '$1',
+        release: '/${template}/$1',
         useMap: true
     },
-    '/client/{components,widget}/**.{js,es,ts,tsx,jsx,css,less}': {
+    '{components,widget}/**.{js,es,ts,tsx,jsx,css,less}': {
         isMod: true
-    },
-    '/client/test/(**)': {
-        useMap: false,
-        release: '/test/${namespace}/$1'
     },
     '${namespace}-map.json': {
         release: '${config}/fis/${namespace}-map.json'
@@ -87,50 +77,24 @@ var commonRoadmap = {
         release: false
     },
     '**': {
-        release: '${static}/${namespace}/$0'
-    }
-};
-
-var serverRoadmap = {
-    '/server/(**)': {
-        useMap: false,
-        preprocessor: false,
-        standard: false,
-        postprocessor: false,
-        optimizer: false,
-        useHash: false,
-        useDomain: false,
-        isMod: false,
-        release: '${app}/${namespace}/$1'
-    },
-    '/server/{**.ts,**.es}': {
-        parser: fis.plugin('typescript', {
-            module: 1,
-            target: 2,
-            sourceMap: true
-        }),
-        rExt: 'js'
-    },
-    '/{node_modules/**,package.json}': {
-        useCompile: false,
-        release: 'app/${namespace}/$0'
+        release: '${static}/$0'
     }
 };
 
 var prodRoadmap = {
-    '/client/**.{js,css,less,ts,jsx,es,tsx}': {
+    '/**.{js,css,less,ts,jsx,es,tsx}': {
         useHash: true
     },
-    '/client/**.{js,ts,jsx,es,tsx}': {
+    '/**.{js,ts,jsx,es,tsx}': {
         optimizer: fis.plugin('uglify-js')
     },
-    '/client/**.{css,less}': {
+    '/**.{css,sass}': {
         optimizer: fis.plugin('clean-css')
     },
     '::image': {
         useHash: true
     },
-    '/client/**.png': {
+    '/**.png': {
         optimizer: fis.plugin('png-compressor')
     }
 };
@@ -138,86 +102,20 @@ var prodRoadmap = {
 // 添加自定义命令
 // fis.require._cache['command-run'] = require('./command/run.js');
 
-[commonRoadmap, clientRoadmap, serverRoadmap, prodRoadmap].forEach(function(roadmap) {
+[commonRoadmap, clientRoadmap, prodRoadmap].forEach(function(roadmap) {
     fis.util.map(roadmap, function(selector, rules) {
         fis.match(selector, rules);
     });
 });
 
 // 发布模式关闭sourceMap
-fis.media('prod').match('/client/{**.ts,**.tsx,**.jsx,**.es}', {
+fis.media('prod').match('/{**.ts,**.tsx,**.jsx,**.es}', {
     parser: fis.plugin('typescript', {
         module: 1,
         target: 0
     }),
     rExt: 'js'
-}).match('/server/{**.ts,**.es}',{
-    parser: fis.plugin('typescript', {
-        module: 1,
-        target: 2
-    }),
-    rExt: 'js'
 });
-
-fis.enableES7 = function (options) {
-    [fis.media('dev'), fis.media('debug'), fis.media('debug-prod')].forEach(function (media) {
-        media.match('/server/**.js', {
-            parser: fis.plugin('typescript', {
-                module: 1,
-                target: 2,
-                sourceMap: true
-            })
-        });
-    });
-    fis.match('/server/**.js', {
-        parser: fis.plugin('typescript', {
-            module: 1,
-            target: 2
-        })
-    });
-};
-
-fis.enableNPM = function (options) {
-    fis.match('/client/node_modules/**.js', {
-        isMod: true
-    });
-    if (options.autoPack) {
-        fis.match('/client/node_modules/**.js', {
-            packTo: options.npmBundlePath || '/client/pkg/npm/bundle.js'
-        });
-        fis.match('/client/node_modules/**.css', {
-            packTo: options.npmCssBundlePath || '/client/pkg/npm/bundle.css'
-        });
-        fis.on('deploy:start', function(groups) {
-            groups.forEach(function(group) {
-                var modified = group.modified;
-                var total = group.modified;
-                var file;
-                var i = modified.length - 1;
-                while ((file = modified[i--])) {
-                    if ((file.rExt === '.js' || file.rExt === '.css') && file.subpath.indexOf('/client/node_modules') === 0) {
-                        modified.splice(i + 1, 1);
-                    }
-                }
-                i = total.length - 1;
-                while ((file = total[i--])) {
-                    if ((file.rExt === '.js' || file.rExt === '.css') && file.subpath.indexOf('/client/node_modules') === 0) {
-                        total.splice(i + 1, 1);
-                    }
-                }
-            });
-        });
-    }
-    fis.match('/client/**.{js,es,jsx,ts,tsx}', {
-        preprocessor: [
-            fis.plugin('js-require-file'),
-            fis.plugin('js-require-css')
-        ]
-    });
-    fis.unhook('components');
-    fis.hook('node_modules');
-};
-
 // 模块化支持
 fis.hook('commonjs', {
     extList: ['.js', '.es', '.ts', '.tsx', '.jsx']
