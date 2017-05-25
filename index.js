@@ -18,21 +18,35 @@ fis.set('project.ignore', [
     'component.json',
     'output/**',
     '/client/node_modules/**',
-    'fis-conf.js'
+    'fis-conf.js',
+    '/static/sass/**'
 ]);
 
 var clientRoadmap = {
     // all release to $static dir
-    '/(**)': {
+    '/page/(**)': {
+        id: '$1',
+        moduleId: '${namespace}:page/$1',
+        url: '${namespace}/page/$1',
+        preprocessor: fis.plugin('extlang'),
+        postprocessor: fis.plugin('require-async'),
+        useMap: true,
+        useSameNameRequire: true,
+        extras: {
+            isPage: true
+        },
+        release: '/${template}/$1'
+    },
+    '/static/(**)': {
         id: '$1',
         moduleId: '${namespace}:$1',
         release: '/${static}/$1'
     },
-    '/**.sass': {
+    '/static/**.sass': {
         parser: fis.plugin('sass'),
         rExt: '.css'
     },
-    '/{**.ts,**.tsx,**.jsx,**.es}': {
+    '/static/{**.ts,**.tsx,**.jsx,**.es}': {
         parser: fis.plugin('typescript', {
             module: 1,
             target: 0,
@@ -40,45 +54,18 @@ var clientRoadmap = {
         }),
         rExt: 'js'
     },
-    '/**.tpl': {
-        preprocessor: fis.plugin('extlang'),
-        postprocessor: fis.plugin('require-async'),
+    '/static/(widget/**.tpl)': {
+        url: '${namespace}/$1',
+        release: '/${template}/${namespace}/$1',
         useMap: true
     },
-    '/**.{tpl,js,ts,jsx,es,tsx}': {
-        useSameNameRequire: true
-    },
-    '/page/**.html': {
-        extras: {
-            isPage: true
-        }
-    },
-    '/(page/**.html)': {
-        url: '$1',
-        release: '/${template}//$1',
-        useMap: true
-    },
-    '/(widget/**.html)': {
-        url: '$1',
-        release: '/${template}/$1',
-        useMap: true
-    },
-    '{components,widget}/**.{js,es,ts,tsx,jsx,css,less}': {
+    '/static/{components,widget}/**.{js,es,ts,tsx,jsx,css,less}': {
         isMod: true
     },
     '${namespace}-map.json': {
         release: '${config}/fis/${namespace}-map.json'
     },
     '::package': {}
-};
-
-var commonRoadmap = {
-    '**.sh': {
-        release: false
-    },
-    '**': {
-        release: '${static}/$0'
-    }
 };
 
 var prodRoadmap = {
@@ -102,7 +89,7 @@ var prodRoadmap = {
 // 添加自定义命令
 // fis.require._cache['command-run'] = require('./command/run.js');
 
-[commonRoadmap, clientRoadmap, prodRoadmap].forEach(function(roadmap) {
+[clientRoadmap, prodRoadmap].forEach(function(roadmap) {
     fis.util.map(roadmap, function(selector, rules) {
         fis.match(selector, rules);
     });
