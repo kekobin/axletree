@@ -63,7 +63,7 @@ var clientRoadmap = {
         isMod: true
     },
     '${namespace}-map.json': {
-        release: '${config}/fis/${namespace}-map.json'
+        release: '${config}/${namespace}-map.json'
     },
     '::package': {}
 };
