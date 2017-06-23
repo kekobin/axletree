@@ -114,17 +114,17 @@ fis.media('prod')
 .match('!{*.{html,tpl}, js/mod/**}', {
     domain: 'http://hd.huya.com/${projectname}',
     deploy: fis.plugin('local-deliver', {
-        to: '../pub/'+${projectname}+'/'
+        to: '../pub/${projectname}/'
     })
 })
 .match('widget/**.tpl', {
     deploy: fis.plugin('local-deliver', {
-        to: '../pub/'+${projectname}+'View/'
+        to: '../pub/${projectname}View/'
     })
 }).match('/(**.html)', {
     release: '/$1',
     deploy: fis.plugin('local-deliver', {
-        to: '../pub/'+${projectname}+'View/'
+        to: '../pub/${projectname}View/'
     })
 })
 
