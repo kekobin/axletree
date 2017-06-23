@@ -114,19 +114,19 @@ fis.media('debug').match('**', {
 // 生产环境
 fis.media('prod')
 .match('!{*.{html,tpl}, js/mod/**}', {
-    domain: 'http://hd.huya.com'+fis.get('projectName'),
+    domain: 'http://hd.huya.com${projectName}',
     deploy: fis.plugin('local-deliver', {
-        to: '../pub/'+fis.get('projectName')+'/'
+        to: '../pub${projectName}/'
     })
 })
 .match('widget/**.tpl', {
     deploy: fis.plugin('local-deliver', {
-        to: '../pub/'+fis.get('projectName')+'View/'
+        to: '../pub${projectName}View/'
     })
 }).match('/(**.html)', {
     release: '/$1',
     deploy: fis.plugin('local-deliver', {
-        to: '../pub/'+fis.get('projectName')+'View/'
+        to: '../pub${projectName}View/'
     })
 })
 
