@@ -1,6 +1,6 @@
 {
   "name": "axletree",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Front End Integrated Solution for node express.",
   "main": "index.js",
   "bin": {
