@@ -27,6 +27,10 @@ var clientRoadmap = {
     '/(**.html)': {
         release: '/${template}/$1'
     },
+    '/(apiConf.js)': {
+        useHash:false,
+        release: '/$1'
+    },
     '/sass/(**.{scss,sass})': {
         parser: fis.plugin('node-sass'),
         isCssLike: true,
@@ -90,7 +94,7 @@ fis.hook('commonjs')    // npm install [-g] fis3-hook-commonjs (doc: https://git
 
 var receiver = 'http://127.0.0.1:8085/axletree/upload';
 
-fis.media('debug').match('**', {
+fis.media('debug').match('!apiConf.js', {
     optimizer: null,
     useHash: false,
     deploy: fis.plugin('http-push', {
@@ -106,6 +110,11 @@ fis.media('debug').match('**', {
     deploy: fis.plugin('http-push', {
         receiver: receiver,
         to: '/'
+    })
+}).match('/apiConf.js', {
+    deploy: fis.plugin('http-push', {
+        receiver: receiver,
+        to: '/config'
     })
 });
 
@@ -123,5 +132,9 @@ fis.media('prod')
 })
 .match('*.png', {
     optimizer: fis.plugin('png-compressor')
+})
+.match('/apiConf.js', {
+    optimizer: null,
+    useHash:false
 });
 
