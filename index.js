@@ -5,7 +5,7 @@ fis.require.prefixes.unshift('axletree');
 fis.cli.name = 'axletree';//也即使用axletree封装fis3
 fis.cli.info = require('./package.json');
 
-fis.set('modules.commands', ['init', 'install', 'release']);
+fis.set('modules.commands', ['init', 'release']);
 
 fis.set('template', '/views');
 fis.set('static', '/static');
