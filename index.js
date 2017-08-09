@@ -25,7 +25,8 @@ fis.set('project.ignore', [
 
 var clientRoadmap = {
     '/(**.html)': {
-        release: '/${template}/$1'
+        release: '/${template}/$1',
+        parser: fis.plugin('widgetreplace')
     },
     '/(apiConf.js)': {
         useHash:false,
