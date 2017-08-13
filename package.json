@@ -1,6 +1,6 @@
 {
   "name": "axletree",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Front End Integrated Solution for node express.",
   "main": "index.js",
   "bin": {
@@ -32,6 +32,7 @@
     "axletree-command-init": "0.1.2",
     "fis3-preprocessor-extlang": "1.1.9",
     "fis-postprocessor-require-async": "0.0.9",
-    "fis-parser-widgetreplace": "0.0.1"
+    "fis-parser-widgetreplace": "latest",
+    "fis-parser-tpl-imgpath": "latest"
   }
 }
