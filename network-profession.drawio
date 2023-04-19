@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-04-18T13:52:40.517Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="ZpIfbYrK_pezV2at5J4O" version="21.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-19T01:55:29.849Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="NW4mHIDcrDSoZ7Us6C2T" version="21.0.4" type="github">
   <diagram name="第 1 页" id="RlJ30OXIhEEYaeAUKg8W">
-    <mxGraphModel dx="1306" dy="868" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
+    <mxGraphModel dx="1306" dy="811" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -168,7 +168,7 @@
         <mxCell id="z8_VhtjDLDSPiQrXXz5P-46" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="748" y="1007" width="503" height="294" as="geometry" />
         </mxCell>
-        <mxCell id="z8_VhtjDLDSPiQrXXz5P-47" value="ID Cakung DC" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="z8_VhtjDLDSPiQrXXz5P-47" value="ID DC" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="771" y="1019" width="102" height="27" as="geometry" />
         </mxCell>
         <mxCell id="z8_VhtjDLDSPiQrXXz5P-48" value="cicso firewall" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -188,13 +188,13 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="z8_VhtjDLDSPiQrXXz5P-54" value="sgw-standard" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="z8_VhtjDLDSPiQrXXz5P-54" value="sgw1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="317" y="1060" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="z8_VhtjDLDSPiQrXXz5P-55" value="sgw-legacy-shared" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="z8_VhtjDLDSPiQrXXz5P-55" value="sgw2" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="317" y="1185" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="z8_VhtjDLDSPiQrXXz5P-56" value="ASM(ip:202.152.60.234)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="z8_VhtjDLDSPiQrXXz5P-56" value="ASM" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1089" y="1065.5" width="148" height="49" as="geometry" />
         </mxCell>
         <mxCell id="z8_VhtjDLDSPiQrXXz5P-57" value="Other Machines" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -209,10 +209,10 @@
         <mxCell id="z8_VhtjDLDSPiQrXXz5P-60" value="Internet" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="490" y="1105" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="z8_VhtjDLDSPiQrXXz5P-65" value="ISP-Lintas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="z8_VhtjDLDSPiQrXXz5P-65" value="ISP1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="682" y="1066" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="z8_VhtjDLDSPiQrXXz5P-66" value="ISP-Quantum" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="z8_VhtjDLDSPiQrXXz5P-66" value="ISP2" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="684" y="1211" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="z8_VhtjDLDSPiQrXXz5P-71" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="z8_VhtjDLDSPiQrXXz5P-48">
