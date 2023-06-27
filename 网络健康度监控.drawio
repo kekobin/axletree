@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-06-27T07:26:59.480Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="xZXY5LVozrHSsN_K_Yn0" version="21.5.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-06-27T07:28:19.903Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="Vmx7i516iZ6biBO8vYib" version="21.5.0" type="github">
   <diagram name="第 1 页" id="YbMV32dz8KYmbLjzAqyX">
     <mxGraphModel dx="843" dy="560" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
       <root>
@@ -299,31 +299,31 @@
         <mxCell id="cddW9qrfOcWyNEqx8EMv-65" value="&lt;b&gt;PC Client&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="1058" y="686" width="155" height="33" as="geometry" />
         </mxCell>
-        <mxCell id="cddW9qrfOcWyNEqx8EMv-66" value="Go Detect Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#07a7a8;strokeColor=#0e8088;" vertex="1" parent="1">
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-66" value="Go Detect Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#07a7a8;strokeColor=#0e8088;fontColor=#FFFFFF;" vertex="1" parent="1">
           <mxGeometry x="953" y="958" width="360" height="54" as="geometry" />
         </mxCell>
-        <mxCell id="cddW9qrfOcWyNEqx8EMv-67" value="Qms-Server" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#07A7A8;strokeColor=#0E8088;" vertex="1" parent="1">
-          <mxGeometry x="1357" y="689" width="74" height="326" as="geometry" />
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-67" value="Qms-Server" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#07A7A8;strokeColor=#0E8088;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="689" width="74" height="326" as="geometry" />
         </mxCell>
         <mxCell id="cddW9qrfOcWyNEqx8EMv-69" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1313" y="809" as="sourcePoint" />
-            <mxPoint x="1356" y="809" as="targetPoint" />
+            <mxPoint x="1339" y="809" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="cddW9qrfOcWyNEqx8EMv-70" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1313" y="984.68" as="sourcePoint" />
-            <mxPoint x="1356" y="984.68" as="targetPoint" />
+            <mxPoint x="1339" y="985" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="cddW9qrfOcWyNEqx8EMv-71" value="ES" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="1464" y="817.38" width="76" height="75.25" as="geometry" />
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-71" value="ES" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1436" y="817.37" width="76" height="75.25" as="geometry" />
         </mxCell>
         <mxCell id="cddW9qrfOcWyNEqx8EMv-72" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1432" y="854.68" as="sourcePoint" />
-            <mxPoint x="1465" y="855" as="targetPoint" />
+            <mxPoint x="1414" y="854.68" as="sourcePoint" />
+            <mxPoint x="1436" y="855" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
