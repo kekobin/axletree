@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-06-27T07:26:17.310Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="Q10bR8OEDGc6btuOQ7ED" version="21.5.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-06-27T07:26:59.480Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="xZXY5LVozrHSsN_K_Yn0" version="21.5.0" type="github">
   <diagram name="第 1 页" id="YbMV32dz8KYmbLjzAqyX">
     <mxGraphModel dx="843" dy="560" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
       <root>
@@ -275,7 +275,7 @@
         <mxCell id="cddW9qrfOcWyNEqx8EMv-57" value="Webkit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" vertex="1" parent="1">
           <mxGeometry x="958" y="725" width="185" height="36" as="geometry" />
         </mxCell>
-        <mxCell id="cddW9qrfOcWyNEqx8EMv-58" value="JS Boundings for Go Methods" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-58" value="JS Bindings for Go Methods" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" vertex="1" parent="1">
           <mxGeometry x="958" y="771" width="185" height="36" as="geometry" />
         </mxCell>
         <mxCell id="cddW9qrfOcWyNEqx8EMv-59" value="JS Runtime" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" vertex="1" parent="1">
