@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-06-29T01:06:06.117Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="I2hjj-IFgAczpcxulefy" version="21.5.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-06-29T08:28:06.559Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="wH5VYWiBL9UbvhrqQOsH" version="21.5.0" type="github">
   <diagram name="第 1 页" id="YbMV32dz8KYmbLjzAqyX">
-    <mxGraphModel dx="1244" dy="827" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
+    <mxGraphModel dx="1448" dy="964" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -579,6 +579,110 @@
             <mxPoint x="344.5" y="1637" as="sourcePoint" />
             <mxPoint x="527.5" y="1637" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-183" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="cddW9qrfOcWyNEqx8EMv-184">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="558" y="2225.4" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-184" value="" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/VirtualMachineWindows.svg;" vertex="1" parent="1">
+          <mxGeometry x="412" y="2198.6400000000003" width="58" height="53.36" as="geometry" />
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-186" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="846" y="2227" as="sourcePoint" />
+            <mxPoint x="985" y="2226.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-192" value="&lt;b&gt;R1&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="570" y="2178.15" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-195" value="&lt;b&gt;R2&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="780.5" y="2179.9" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-200" value="" style="image;html=1;image=img/lib/clip_art/networking/Router_Icon_128x128.png" vertex="1" parent="1">
+          <mxGeometry x="776.5" y="2190.75" width="68" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-201" value="" style="image;html=1;image=img/lib/clip_art/networking/Router_Icon_128x128.png" vertex="1" parent="1">
+          <mxGeometry x="562" y="2189" width="68" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-202" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="634.5" y="2230" as="sourcePoint" />
+            <mxPoint x="772" y="2230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-204" value="主机A" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="414" y="2159" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-205" value="主机B" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="987.54" y="2148.15" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-206" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="414" y="2291" as="sourcePoint" />
+            <mxPoint x="804" y="2291" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="560" y="2291" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-207" value="1.发送包" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="426" y="2258" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-208" value="假设电源关闭" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1054.08" y="2203.33" width="47" height="37" as="geometry" />
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-209" value="2.R2为了知道B的MAC地址而发送ARP包" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="771.5" y="2312" width="176" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-210" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="776.5" y="2375" as="sourcePoint" />
+            <mxPoint x="1019" y="2375" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="922.5" y="2375" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-211" value="3.ARP请求" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="776.5" y="2348" width="176" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-212" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="776.5" y="2428" as="sourcePoint" />
+            <mxPoint x="1019" y="2428" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="922.5" y="2428" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-213" value="4.再次发送ARP请求(然而B已关机)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="776.5" y="2401" width="206.5" height="21" as="geometry" />
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-214" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="776.5" y="2480" as="sourcePoint" />
+            <mxPoint x="1019" y="2480" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="922.5" y="2480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-215" value="5.多次发送ARP请求后..." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="776.5" y="2453" width="176" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-217" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="794" y="2508" as="sourcePoint" />
+            <mxPoint x="426" y="2512" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-218" value="6.由于始终无法达到主机B，R2返回一个ICMP目标不可大的包给主机A" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="442" y="2534" width="352" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="cddW9qrfOcWyNEqx8EMv-219" value="" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/VirtualMachineWindows.svg;" vertex="1" parent="1">
+          <mxGeometry x="988.54" y="2195.1500000000005" width="58" height="53.36" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
