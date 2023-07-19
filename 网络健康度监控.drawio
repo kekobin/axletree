@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-07-11T10:09:41.767Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="unXW06hJAJdbnsuy1UjE" version="21.6.1" type="github">
+<mxfile host="app.diagrams.net" modified="2023-07-19T10:44:27.902Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="Di6IZg4VcErzW3-ce1Qd" version="21.6.1" type="github">
   <diagram name="第 1 页" id="YbMV32dz8KYmbLjzAqyX">
     <mxGraphModel dx="1306" dy="868" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
       <root>
@@ -683,9 +683,6 @@
         </mxCell>
         <mxCell id="cddW9qrfOcWyNEqx8EMv-219" value="" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/VirtualMachineWindows.svg;" parent="1" vertex="1">
           <mxGeometry x="988.54" y="2195.1500000000005" width="58" height="53.36" as="geometry" />
-        </mxCell>
-        <mxCell id="cddW9qrfOcWyNEqx8EMv-221" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" parent="1" vertex="1">
-          <mxGeometry x="721" y="2686" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
