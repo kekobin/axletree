@@ -1,9 +1,60 @@
-<mxfile host="app.diagrams.net" modified="2023-11-13T13:47:51.205Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" version="22.1.0" etag="a5d_o6BuCHiA-UBCl61k" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-13T14:38:19.472Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="aKZG994d5Fwypt5K3AMO" version="22.1.0" type="github">
   <diagram name="第 1 页" id="8eYaLx2iVgLUk6nrWzjS">
-    <mxGraphModel>
+    <mxGraphModel dx="1244" dy="821" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="U4k9JB4fMSv_fCR6Y09t-11" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="152" y="209" width="123" height="168" as="geometry" />
+        </mxCell>
+        <mxCell id="U4k9JB4fMSv_fCR6Y09t-1" value="手机 wifi1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="175" y="223" width="63" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="U4k9JB4fMSv_fCR6Y09t-5" value="ISP" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="227" width="80" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="U4k9JB4fMSv_fCR6Y09t-6" value="服务器" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="265" width="95" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="U4k9JB4fMSv_fCR6Y09t-7" value="ISP" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="337" y="306" width="80" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="U4k9JB4fMSv_fCR6Y09t-8" value="手机 wifi2" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="171" y="261" width="63" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="U4k9JB4fMSv_fCR6Y09t-9" value="手机 wifi3" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="171" y="291" width="63" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="U4k9JB4fMSv_fCR6Y09t-10" value="手机 wifi4" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="171" y="324" width="63" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="U4k9JB4fMSv_fCR6Y09t-12" value="1.找一个开源游戏app&lt;br&gt;2.基于它二次开发&lt;br&gt;3.注册公司（找一个代理记账）&lt;br&gt;4.尝试集成sdk&lt;br&gt;5.跟服务器打通" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="156.5" y="397" width="441" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="U4k9JB4fMSv_fCR6Y09t-13" value="交互层UI(APP)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="650" width="172" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="U4k9JB4fMSv_fCR6Y09t-14" value="网关" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="281" y="727" width="306" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="U4k9JB4fMSv_fCR6Y09t-15" value="应用服务" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="818" width="103" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="U4k9JB4fMSv_fCR6Y09t-16" value="游戏服务" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="818" width="80" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="U4k9JB4fMSv_fCR6Y09t-17" value="广告服务" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="492" y="818" width="95" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="U4k9JB4fMSv_fCR6Y09t-18" value="广告sdk" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="462" y="650" width="128" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="U4k9JB4fMSv_fCR6Y09t-19" value="静态服务器" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="64" y="680" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="U4k9JB4fMSv_fCR6Y09t-20" value="应用服务器" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="81" y="828" width="80" height="80" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
